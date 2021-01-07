@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --light-neutral: #d6d3cc;
+    --dark-neutral: #44484d;
+    --light-accent: #eee3b2;
+    --med-accent: #cebc55;
+    --dark-accent: #25476a;
+    --light-pop: #c2e5e5;
+    --med-pop: #c2a4c2;
+    --dark-pop: #217786;
+}
+
+body {
+    background-color: var(--light-pop);
+}
