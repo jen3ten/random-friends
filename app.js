@@ -1,2 +1,2 @@
-const app = document.querySelector('.app');
-app.innerText = "Hello";
+const appDiv = document.querySelector('.app');
+appDiv.innerText = "Hello";
