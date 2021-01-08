@@ -10,11 +10,11 @@
 
 const friendDiv = document.querySelector('.friends');
 const friendList = [
-    {name: "Ray", color:"red", bgcolor:"yellow"},
-    {name: "Oscar", color:"orange", bgcolor:"brown"},
-    {name: "Gwen", color:"green", bgcolor:"pink"},
-    {name: "Bob", color:"blue", bgcolor:"orange"},
-    {name: "Marie", color:"magenta", bgcolor:"purple"}
+    {name: "Ray", greeting: "Hey, ", color:"red", bgcolor:"yellow"},
+    {name: "Oscar", greeting: "Yo! ", color:"orange", bgcolor:"brown"},
+    {name: "Gwen", greeting: "Good-day, ", color:"green", bgcolor:"pink"},
+    {name: "Bob", greeting: "Hi, ", color:"blue", bgcolor:"orange"},
+    {name: "Marie", greeting: "Morning, ", color:"magenta", bgcolor:"purple"}
 ];
 
 let divNode;
@@ -23,16 +23,6 @@ friendList.forEach((friend)=>
         divNode = document.createElement('div');
         divNode.style.color = friend.color;
         divNode.style.backgroundColor = friend.bgcolor;
-
-        divNode.innerHTML = friend.name;
+        divNode.innerHTML = friend.greeting + friend.name;
         friendDiv.appendChild(divNode);
     })
-
-    
-
-// divNode.innerHTML = "Hey Oscar!";
-// friendDiv.appendChild(divNode);
-
-// Ray, Oscar, Gwen, Bob, and Marie
-
-// red, orange, green, blue, and magenta,
