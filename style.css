@@ -5,20 +5,21 @@
 }
 
 body {
-    background-color: var(--light-pop);
+    width: 90%;
+    margin: 2rem auto;
 }
 
-.greeting, .friends {
+.friends, .greeting{
     width: 100%;
-    text-align:center;
-    
+    text-align:center;  
 }
 
-.friends div {
-    
-}
+    .friends div {
+        width: 5rem;
+        margin: auto;
+    }
 
-.greeting span {
-    color: white;
-    background-color: black;
+    .greeting span {
+        color: white;
+        background-color: black;
     }
