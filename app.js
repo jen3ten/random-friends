@@ -29,6 +29,17 @@ const randomizeFriendList = function(){
     return friendList;
 };
 
+const hoverEffect = function(friendList){
+    const friendNameDiv = document.querySelectorAll('.friend-name');
+    friendNameDiv.forEach((friendElement) => {
+        friendElement.addEventListener('mouseover', function(){
+            const temporaryColor = friendElement.style.color;
+            friendElement.style.color = friendElement.style.backgroundColor;
+            friendElement.style.backgroundColor = temporaryColor;
+        })
+    })
+}
+
 const greetFriends = function(friendList){
     const friendDiv = document.querySelector('.friends');
     let divNode;
@@ -36,11 +47,15 @@ const greetFriends = function(friendList){
     friendList.forEach((friend)=>
     {
         divNode = document.createElement('div');
+        divNode.setAttribute('class', 'friend-name');
         divNode.style.color = friend.color;
         divNode.style.backgroundColor = friend.bgcolor;
         divNode.innerHTML = friend.greeting + friend.name;
         friendDiv.appendChild(divNode);
-    })   
+    })  
+    
+    hoverEffect(friendList);
 }
+
 
 greetFriends(randomizeFriendList());
