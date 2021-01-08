@@ -10,19 +10,19 @@
 
 const friendDiv = document.querySelector('.friends');
 const friendList = [
-    {name: "Ray", color:"red", bgcolor:"white"},
+    {name: "Ray", color:"red", bgcolor:"yellow"},
     {name: "Oscar", color:"orange", bgcolor:"brown"},
-    {name: "Gwen", color:"green", bgcolor:"yellow"},
+    {name: "Gwen", color:"green", bgcolor:"pink"},
     {name: "Bob", color:"blue", bgcolor:"orange"},
-    {name: "Marie", color:"magenta", bgcolor:"yellow"}
+    {name: "Marie", color:"magenta", bgcolor:"purple"}
 ];
-let divNode;
 
+let divNode;
 friendList.forEach((friend)=>
     {
         divNode = document.createElement('div');
         divNode.style.color = friend.color;
-        divNode.style.bgcolor = friend.bgcolor;
+        divNode.style.backgroundColor = friend.bgcolor;
 
         divNode.innerHTML = friend.name;
         friendDiv.appendChild(divNode);
