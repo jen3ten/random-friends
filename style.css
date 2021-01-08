@@ -16,7 +16,8 @@ body {
 
     .friends div {
         width: 5rem;
-        margin: auto;
+        margin: 1rem auto;
+        padding: .5rem;
     }
 
     .greeting span {
