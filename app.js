@@ -8,21 +8,39 @@
 // Make the text bigger and add a couple of CSS styles of your choice.
 // You don't want to show any favoritism: randomize the order that their names appear on the page each time the page is loaded.
 
-const friendDiv = document.querySelector('.friends');
-const friendList = [
-    {name: "Ray", greeting: "Hey, ", color:"red", bgcolor:"yellow"},
-    {name: "Oscar", greeting: "Yo! ", color:"orange", bgcolor:"brown"},
-    {name: "Gwen", greeting: "Good-day, ", color:"green", bgcolor:"pink"},
-    {name: "Bob", greeting: "Hi, ", color:"blue", bgcolor:"orange"},
-    {name: "Marie", greeting: "Morning, ", color:"magenta", bgcolor:"purple"}
-];
+const randomizeFriendList = function(){
+    let friendList = [
+        {name: "Ray", greeting: "Hey, ", color:"red", bgcolor:"yellow"},
+        {name: "Oscar", greeting: "Yo! ", color:"orange", bgcolor:"brown"},
+        {name: "Gwen", greeting: "Good-day, ", color:"green", bgcolor:"pink"},
+        {name: "Bob", greeting: "Hi, ", color:"blue", bgcolor:"orange"},
+        {name: "Marie", greeting: "Morning, ", color:"magenta", bgcolor:"purple"}
+    ];
 
-let divNode;
-friendList.forEach((friend)=>
+    let randomIndex, currentFriend;
+    for(let i = friendList.length - 1; i >= 0; i--){
+        currentFriend = friendList[i];
+        randomIndex = Math.floor(Math.random() * (i + 1));
+        friendList[i] = friendList[randomIndex];
+        friendList[randomIndex] = currentFriend;
+        console.log(friendList[i].name)
+    }
+    
+    return friendList;
+};
+
+const greetFriends = function(friendList){
+    const friendDiv = document.querySelector('.friends');
+    let divNode;
+
+    friendList.forEach((friend)=>
     {
         divNode = document.createElement('div');
         divNode.style.color = friend.color;
         divNode.style.backgroundColor = friend.bgcolor;
         divNode.innerHTML = friend.greeting + friend.name;
         friendDiv.appendChild(divNode);
-    })
+    })   
+}
+
+greetFriends(randomizeFriendList());
